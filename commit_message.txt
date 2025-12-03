@@ -1,0 +1,5 @@
+feat: Initial commit with interactive 3D particle theme
+
+- Implemented hybrid particle system with 3D themes
+- Added mouse interaction and responsive design
+- Configured card hover effects
