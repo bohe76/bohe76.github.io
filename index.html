@@ -207,6 +207,109 @@
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.8rem;
         }
+
+        .more-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+            opacity: 0;
+        }
+
+        .more-content.expanded {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .more-btn {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-sub);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        .more-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            border-color: var(--text-main);
+        }
+
+        .more-btn svg {
+            transition: transform 0.4s ease;
+        }
+
+        .more-btn.expanded svg {
+            transform: rotate(180deg);
+        }
+
+        .career-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .career-item {
+            margin-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+
+        .career-item .company {
+            font-weight: 600;
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+
+        .career-item .role {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: auto;
+        }
+
+        .detail-section {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .detail-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        .detail-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 10px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 
@@ -218,7 +321,88 @@
         <h1 class="title">bohe76 Dev Hub</h1>
         <p class="subtitle">Developer & SaaS Maker</p>
 
-        <div class="section-title" style="margin-top: 0;">Projects</div>
+        <div class="section-title" style="margin-top: 0;">About Me</div>
+        <div class="link-card" style="cursor: default; margin-bottom: 2rem;">
+            <p style="color: var(--text-main); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                안녕하세요! 가치를 만드는 개발자 <strong>bohe76</strong>입니다.<br>
+                사용자 경험을 최우선으로 생각하며, 효율적인 SaaS와 웹 서비스를 개발합니다.
+            </p>
+
+            <ul class="career-list">
+                <li class="career-item">
+                    <span class="company">Dsense</span>
+                    <span class="role">CEO (Current)</span>
+                </li>
+                <li class="career-item">
+                    <span class="company">Samsung Electronics</span>
+                    <span class="role">Senior UX Dev</span>
+                </li>
+                <li class="career-item">
+                    <span class="company">Adobe</span>
+                    <span class="role">Flash Contents Engineer</span>
+                </li>
+                <li class="career-item">
+                    <span class="company">ACG</span>
+                    <span class="role">Senior Developer</span>
+                </li>
+            </ul>
+
+            <div class="more-content" id="about-more">
+                <div class="detail-section">
+                    <div class="detail-title">Awards & Honors</div>
+                    <ul class="detail-list">
+                        <li>FWA Site of the Day (MOMU)</li>
+                        <li>iWebDNet Good Design Award</li>
+                        <li>Macromedia Showcase (LotteHotel, F.U.N)</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-title">Publications & Speaking</div>
+                    <ul class="detail-list">
+                        <li>Adobe DevNet Author (Flash optimization)</li>
+                        <li>Web Monthly Magazine Writer</li>
+                        <li>MAX 2006 Conference Speaker</li>
+                        <li>Instructor at Kaywon Arts Univ. & Jungle Academy</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-title">Community</div>
+                    <ul class="detail-list">
+                        <li>FlaLab Operator (Adobe User Group)</li>
+                        <li>Adobe Certified Instructor (Flash Lite)</li>
+                        <li>Flash 7, 8, CS3 Beta Tester</li>
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <div class="detail-title">Tech Stack</div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.1); margin-left: 0; color: #e2e8f0;">Python</span>
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.1); margin-left: 0; color: #e2e8f0;">React</span>
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.1); margin-left: 0; color: #e2e8f0;">FastAPI</span>
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.1); margin-left: 0; color: #e2e8f0;">AI/LLM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: flex-end; margin-top: 1rem; width: 100%;">
+                <button class="more-btn" onclick="toggleMore()" style="margin-left: 0; margin-top: 0;">
+                    More
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 1L5 5L9 1" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="section-title">Projects</div>
         <div class="links">
             <a href="https://bohe76.github.io/boss-alarm" target="_blank" class="link-card">
                 <div class="card-header">
@@ -251,6 +435,22 @@
                     <h2>Tybohe Tech</h2>
                 </div>
                 <p>AI 트렌드와 기술적 영감</p>
+            </a>
+        </div>
+
+        <div class="section-title">Contact</div>
+        <div class="links grid">
+            <a href="mailto:bohe76@gmail.com" class="link-card">
+                <div class="card-header">
+                    <h2>Email</h2>
+                </div>
+                <p>bohe76@gmail.com</p>
+            </a>
+            <a href="https://github.com/bohe76" target="_blank" class="link-card">
+                <div class="card-header">
+                    <h2>GitHub</h2>
+                </div>
+                <p>@bohe76</p>
             </a>
         </div>
 
@@ -550,6 +750,36 @@
         }
 
 
+
+
+        function toggleMore() {
+            const content = document.getElementById('about-more');
+            const btn = document.querySelector('.more-btn');
+
+            content.classList.toggle('expanded');
+            btn.classList.toggle('expanded');
+
+            if (content.classList.contains('expanded')) {
+                btn.innerHTML = `Less <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
+            } else {
+                btn.innerHTML = `More <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
+            }
+        }
+
+
+        function toggleMore() {
+            const content = document.getElementById('about-more');
+            const btn = document.querySelector('.more-btn');
+
+            content.classList.toggle('expanded');
+            btn.classList.toggle('expanded');
+
+            if (content.classList.contains('expanded')) {
+                btn.innerHTML = `Less <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
+            } else {
+                btn.innerHTML = `More <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
+            }
+        }
 
         resize();
         init();
