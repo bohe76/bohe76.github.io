@@ -1,0 +1,8 @@
+refactor: separate css/js and improve about me ui
+
+- Refactor: Extract inline CSS to css/styles.css and JS to js/main.js
+- Feat: Enhance 'About Me' section with expandable details
+- Feat: Add 'Contact' section
+- Style: Improve expand/collapse animation (ease-out, smooth layout transition)
+- Style: Ensure right-alignment for roles and 'More' button
+- Chore: Update company name and general cleanup
