@@ -102,10 +102,35 @@
             letter-spacing: 0.5px;
         }
 
+        .section-title {
+            width: 100%;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            margin: 2rem 0 0.8rem 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
         .links {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .links.grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 500px) {
+            .links.grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .link-card {
@@ -190,9 +215,10 @@
     <canvas id="canvas-container"></canvas>
 
     <div class="container">
-        <h1 class="title">Hello, bohe76</h1>
+        <h1 class="title">bohe76 Dev Hub</h1>
         <p class="subtitle">Developer & SaaS Maker</p>
 
+        <div class="section-title" style="margin-top: 0;">Projects</div>
         <div class="links">
             <a href="https://bohe76.github.io/boss-alarm" target="_blank" class="link-card">
                 <div class="card-header">
@@ -202,19 +228,29 @@
                 <p>게임 보스 타임 알림 서비스</p>
             </a>
 
-            <a href="https://www.bohehub.com/" target="_blank" class="link-card">
-                <div class="card-header">
-                    <h2>BoheHub Blog</h2>
-                </div>
-                <p>음식의 과학적 원리, 재료에 대한 심도 있는 고찰, 미식 비평</p>
-            </a>
-
             <a href="https://nplaceup.com/" target="_blank" class="link-card">
                 <div class="card-header">
                     <h2>nPlaceUp</h2>
                     <span class="tag hot">MVP Launched</span>
                 </div>
                 <p>네이버 플레이스 최적화 분석 SaaS</p>
+            </a>
+        </div>
+
+        <div class="section-title">Blogs</div>
+        <div class="links grid">
+            <a href="https://www.bohehub.com/" target="_blank" class="link-card">
+                <div class="card-header">
+                    <h2>BoheHub</h2>
+                </div>
+                <p>미식과 요리의 과학, 미식 비평</p>
+            </a>
+
+            <a href="https://tybohe.tistory.com/" target="_blank" class="link-card">
+                <div class="card-header">
+                    <h2>Tybohe Tech</h2>
+                </div>
+                <p>AI 트렌드와 기술적 영감</p>
             </a>
         </div>
 
@@ -245,7 +281,7 @@
             SNOW: 3     // Snow Blizzard (nPlaceUp)
         };
 
-        let currentTheme = THEMES.DEFAULT;
+        let currentTheme = Math.floor(Math.random() * 4);
         let time = 0;
 
         window.addEventListener('resize', resize);
@@ -513,16 +549,7 @@
             requestAnimationFrame(animate);
         }
 
-        // Card Hover Events
-        const cards = document.querySelectorAll('.link-card');
-        const linksContainer = document.querySelector('.links');
 
-        cards[0].addEventListener('mouseenter', () => currentTheme = THEMES.FIREFLIES);
-        cards[1].addEventListener('mouseenter', () => currentTheme = THEMES.NET);
-        cards[2].addEventListener('mouseenter', () => currentTheme = THEMES.SNOW);
-
-        // Reset only when leaving the entire container
-        linksContainer.addEventListener('mouseleave', () => currentTheme = THEMES.DEFAULT);
 
         resize();
         init();
