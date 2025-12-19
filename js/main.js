@@ -287,35 +287,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-function toggleMore() {
-    const content = document.getElementById('about-more');
-    const btn = document.querySelector('.more-btn');
-
-    if (content.classList.contains('expanded')) {
-        // Prepare for collapse: set explicit height first (transition start point)
-        content.style.maxHeight = content.scrollHeight + "px";
-
-        // Force reflow
-        content.offsetHeight;
-
-        content.classList.remove('expanded');
-        btn.classList.remove('expanded');
-
-        // Collapse to 0
-        content.style.maxHeight = null;
-
-        btn.innerHTML = `More <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
-    } else {
-        content.classList.add('expanded');
-        btn.classList.add('expanded');
-
-        // Expand to exact content height
-        content.style.maxHeight = content.scrollHeight + "px";
-
-        btn.innerHTML = `Less <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>`;
-    }
-}
-
 resize();
 init();
 animate();

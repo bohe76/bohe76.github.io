@@ -1,6 +1,12 @@
-feat: 테크 스택 상세화 및 애니메이션 최적화
+feat: 'About Me' 섹션 대시보드 UI 개편 및 경력 정보 상세화
 
-- 'About Me' 섹션에 상세 테크 스택 카테고리(Frontend, Backend, AI/ML 등) 및 Strengths 추가
-- 'About Me' 펼치기/접기 애니메이션 시 발생하는 딜레이 제거를 위해 scrollHeight 기반의 동적 높이 계산 로직 적용
-- CSS 테크 그룹 스타일 및 AI/ML 특화 태그 스타일 추가
-- 애니메이션 속도를 0.3s로 조정하여 반응성 향상
+- 'About Me' 섹션을 더 이상 숨기지 않고 모든 정보를 독립된 카드 UI로 한눈에 볼 수 있도록 전면 개편
+- Honors & Activities 상장 및 활동 내역을 통합 카드 UI로 재구성
+- 테크 스택 카테고리(Frontend, Backend, AI/ML 등) 및 강점을 각각 독립된 카드로 분리하여 전문성 강조
+- 경력 사항 상세 업데이트:
+    - Samsung Electronics (Mobile) -> Principal Engineer 명칭 수정
+    - Adobe -> Flash Contents Specialist 분리
+    - Macromedia -> & Technical Evangelist 분리 및 추가
+    - Lettee (Junior Developer) 경력 추가
+- 더 이상 사용하지 않는 'More' 버튼 및 관련 자바스크립트 로직(toggleMore) 완전 제거
+- 카드 그리드 레이아웃 최적화 및 모바일 대응 스타일링 보완
