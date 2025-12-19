@@ -1,8 +1,6 @@
-refactor: separate css/js and improve about me ui
+feat: 테크 스택 상세화 및 애니메이션 최적화
 
-- Refactor: Extract inline CSS to css/styles.css and JS to js/main.js
-- Feat: Enhance 'About Me' section with expandable details
-- Feat: Add 'Contact' section
-- Style: Improve expand/collapse animation (ease-out, smooth layout transition)
-- Style: Ensure right-alignment for roles and 'More' button
-- Chore: Update company name and general cleanup
+- 'About Me' 섹션에 상세 테크 스택 카테고리(Frontend, Backend, AI/ML 등) 및 Strengths 추가
+- 'About Me' 펼치기/접기 애니메이션 시 발생하는 딜레이 제거를 위해 scrollHeight 기반의 동적 높이 계산 로직 적용
+- CSS 테크 그룹 스타일 및 AI/ML 특화 태그 스타일 추가
+- 애니메이션 속도를 0.3s로 조정하여 반응성 향상

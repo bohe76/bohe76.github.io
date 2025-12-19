@@ -183,7 +183,7 @@ footer {
 .more-content {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.6s ease-out;
+    transition: all 0.3s ease-out;
     opacity: 0;
     margin-top: 0;
     padding-top: 0;
@@ -191,7 +191,6 @@ footer {
 }
 
 .more-content.expanded {
-    max-height: 1000px;
     opacity: 1;
     margin-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -284,4 +283,49 @@ footer {
     margin-bottom: 0.5rem;
     padding-left: 10px;
     border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-group {
+    margin-bottom: 1.2rem;
+}
+
+.tech-group:last-child {
+    margin-bottom: 0;
+}
+
+.tech-sub-title {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-container {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.tag.tech {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    margin-left: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-transform: none;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+}
+
+.tag.tech-ai {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    margin-left: 0;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 4px;
+    text-transform: none;
+    font-size: 0.75rem;
+    padding: 3px 8px;
 }
